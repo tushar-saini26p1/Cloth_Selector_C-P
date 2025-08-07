@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Style Matcher - Smart Outfit Combinations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>AI Style Matcher</h1>
+            <p>Upload your clothing items and let AI create perfect outfit combinations</p>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="card">
+                <div class="card__header">
+                    <h2>Upload Your Clothing Items</h2>
+                    <p>Drag and drop images or click to browse</p>
+                </div>
+                <div class="card__body">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <div class="upload-icon">📸</div>
+                            <p>Drag & drop clothing images here</p>
+                            <p class="upload-sub">or click to browse files</p>
+                        </div>
+                        <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+                    </div>
+                    
+                    <!-- Image Previews -->
+                    <div class="image-previews" id="imagePreviews"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preferences Section -->
+        <section class="preferences-section">
+            <div class="card">
+                <div class="card__header">
+                    <h2>Style Preferences</h2>
+                    <p>Tell us about your style preferences</p>
+                </div>
+                <div class="card__body">
+                    <form class="preferences-form" id="preferencesForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="occasion" class="form-label">Occasion *</label>
+                                <select id="occasion" class="form-control" required>
+                                    <option value="">Select occasion</option>
+                                    <option value="casual">Casual</option>
+                                    <option value="formal">Formal</option>
+                                    <option value="party">Party</option>
+                                    <option value="business">Business</option>
+                                    <option value="sports">Sports</option>
+                                    <option value="wedding">Wedding</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="clothingType" class="form-label">Preferred Clothing Type</label>
+                                <select id="clothingType" class="form-control">
+                                    <option value="">Any type</option>
+                                    <option value="shirt">Shirt</option>
+                                    <option value="t-shirt">T-Shirt</option>
+                                    <option value="pants">Pants</option>
+                                    <option value="jeans">Jeans</option>
+                                    <option value="dress">Dress</option>
+                                    <option value="skirt">Skirt</option>
+                                    <option value="jacket">Jacket</option>
+                                    <option value="sweater">Sweater</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="colorPreference" class="form-label">Color Preference</label>
+                                <select id="colorPreference" class="form-control">
+                                    <option value="">Any colors</option>
+                                    <option value="bright">Bright Colors</option>
+                                    <option value="dark">Dark Colors</option>
+                                    <option value="neutral">Neutral Colors</option>
+                                    <option value="pastel">Pastel Colors</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width" id="generateBtn" disabled>
+                            Generate Combinations
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Section -->
+        <section class="loading-section hidden" id="loadingSection">
+            <div class="card">
+                <div class="card__body">
+                    <div class="loading-content">
+                        <div class="loading-spinner"></div>
+                        <h3>AI is analyzing your style...</h3>
+                        <p>Creating perfect outfit combinations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section hidden" id="resultsSection">
+            <div class="card">
+                <div class="card__header">
+                    <h2>Your AI-Generated Outfit Combinations</h2>
+                    <p>Here are the perfect combinations for your style</p>
+                </div>
+                <div class="card__body">
+                    <div class="combinations-grid" id="combinationsGrid">
+                        <!-- Combinations will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
