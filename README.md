@@ -1,5 +1,5 @@
 # Cloth_Selector_C-P
-User uploads photos of their clothes.
+User uploads photos of their clothes./
 User selects a category and type of clothing they want to wear (e.g., casual, formal; shirt, pants).
 Images are sent to backend, image features are extracted.
 AI model analyzes features and occasion input.
